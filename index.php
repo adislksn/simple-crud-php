@@ -3,7 +3,7 @@
 require_once("dbConnection.php");
 
 // Fetch data in descending order (lastest entry first)
-$result = mysqli_query($mysqli, "SELECT * FROM prodi ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM prodi ORDER BY id ASC");
 ?>
 
 <html>
@@ -18,11 +18,11 @@ $result = mysqli_query($mysqli, "SELECT * FROM prodi ORDER BY id DESC");
 	</p>
 	<table width='80%' border=0>
 		<tr bgcolor='#DDDDDD'>
-			<td><strong>id</strong></td>
-			<td><strong>fakultas</strong></td>
-			<td><strong>prodi</strong></td>
-			<td><strong>program</strong></td>
-			<td><strong>akreditasi</strong></td>
+			<td><strong>Id</strong></td>
+			<td><strong>Fakultas</strong></td>
+			<td><strong>Prodi</strong></td>
+			<td><strong>Program</strong></td>
+			<td><strong>Akreditasi</strong></td>
 		</tr>
 		<?php
 		// Fetch the next row of a result set as an associative array
