@@ -24,6 +24,10 @@
 				<td><input type="text" name="program"></td>
 			</tr>
 			<tr> 
+				<td>Akreditasi</td>
+				<td><input type="text" name="akreditasi"></td>
+			</tr>
+			<tr> 
 				<td></td>
 				<td><input type="submit" name="submit" value="Add"></td>
 			</tr>

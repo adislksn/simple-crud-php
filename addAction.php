@@ -10,21 +10,26 @@ require_once("dbConnection.php");
 
 if (isset($_POST['submit'])) {
 	// Escape special characters in string for use in SQL statement	
-	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
-	$age = mysqli_real_escape_string($mysqli, $_POST['age']);
-	$email = mysqli_real_escape_string($mysqli, $_POST['email']);
+	$fakultas = mysqli_real_escape_string($mysqli, $_POST['fakultas']);
+	$prodi = mysqli_real_escape_string($mysqli, $_POST['prodi']);
+	$program = mysqli_real_escape_string($mysqli, $_POST['program']);
+	$akreditasi = mysqli_real_escape_string($mysqli, $_POST['akreditasi']);
 		
 	// Check for empty fields
-	if (empty($name) || empty($age) || empty($email)) {
-		if (empty($name)) {
+	if (empty($fakultas) || empty($prodi) || empty($program) || empty($akreditasi)) {
+		if (empty($fakultas)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
 		
-		if (empty($age)) {
+		if (empty($prodi)) {
 			echo "<font color='red'>Age field is empty.</font><br/>";
 		}
 		
-		if (empty($email)) {
+		if (empty($program)) {
+			echo "<font color='red'>Email field is empty.</font><br/>";
+		}
+
+		if (empty($akreditasi)) {
 			echo "<font color='red'>Email field is empty.</font><br/>";
 		}
 		
@@ -34,7 +39,7 @@ if (isset($_POST['submit'])) {
 		// If all the fields are filled (not empty) 
 
 		// Insert data into database
-		$result = mysqli_query($mysqli, "INSERT INTO users (`name`, `age`, `email`) VALUES ('$name', '$age', '$email')");
+		$result = mysqli_query($mysqli, "INSERT INTO prodi (`fakultas`, `prodi`, `program`, `akreditasi`) VALUES ('$fakultas', '$prodi', '$program', '$akreditasi')");
 		
 		// Display success message
 		echo "<p><font color='green'>Data added successfully!</p>";
