@@ -23,6 +23,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM prodi ORDER BY id ASC");
 			<td><strong>Prodi</strong></td>
 			<td><strong>Program</strong></td>
 			<td><strong>Akreditasi</strong></td>
+			<td><strong>Aksi</strong></td>
 		</tr>
 		<?php
 		// Fetch the next row of a result set as an associative array
@@ -37,6 +38,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM prodi ORDER BY id ASC");
 			<a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 		}
 		?>
+		</tr>
 	</table>
 </body>
 </html>

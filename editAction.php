@@ -4,27 +4,31 @@ require_once("dbConnection.php");
 
 if (isset($_POST['update'])) {
 	// Escape special characters in a string for use in an SQL statement
-	$id = mysqli_real_escape_string($mysqli, $_POST['id']);
-	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
-	$age = mysqli_real_escape_string($mysqli, $_POST['age']);
-	$email = mysqli_real_escape_string($mysqli, $_POST['email']);	
+	$fakultas = mysqli_real_escape_string($mysqli, $_POST['fakultas']);
+	$prodi = mysqli_real_escape_string($mysqli, $_POST['prodi']);
+	$program = mysqli_real_escape_string($mysqli, $_POST['program']);
+	$akreditasi = mysqli_real_escape_string($mysqli, $_POST['akreditasi']);
 	
 	// Check for empty fields
-	if (empty($name) || empty($age) || empty($email)) {
-		if (empty($name)) {
+	if (empty($fakultas) || empty($prodi) || empty($program) || empty($akreditasi)) {
+		if (empty($fakultas)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
 		
-		if (empty($age)) {
+		if (empty($prodi)) {
 			echo "<font color='red'>Age field is empty.</font><br/>";
 		}
 		
-		if (empty($email)) {
+		if (empty($program)) {
+			echo "<font color='red'>Email field is empty.</font><br/>";
+		}
+
+		if (empty($akreditasi)) {
 			echo "<font color='red'>Email field is empty.</font><br/>";
 		}
 	} else {
 		// Update the database table
-		$result = mysqli_query($mysqli, "UPDATE users SET `name` = '$name', `age` = '$age', `email` = '$email' WHERE `id` = $id");
+		$result = mysqli_query($mysqli, "UPDATE prodi SET `fakultas` = '$fakultas', `prodi` = '$prodi', `program` = '$program', `akreditasi` = '$akreditasi' WHERE `id` = $id");
 		
 		// Display success message
 		echo "<p><font color='green'>Data updated successfully!</p>";

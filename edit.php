@@ -6,14 +6,16 @@ require_once("dbConnection.php");
 $id = $_GET['id'];
 
 // Select data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM users WHERE id = $id");
+$result = mysqli_query($mysqli, "SELECT * FROM prodi WHERE id = $id");
 
 // Fetch the next row of a result set as an associative array
 $resultData = mysqli_fetch_assoc($result);
 
-$name = $resultData['name'];
-$age = $resultData['age'];
-$email = $resultData['email'];
+$fakultas = $resultData['fakultas'];
+$prodi = $resultData['prodi'];
+$program = $resultData['program'];
+$akreditasi = $resultData['akreditasi'];
+		
 ?>
 <html>
 <head>	
@@ -29,16 +31,20 @@ $email = $resultData['email'];
 	<form name="edit" method="post" action="editAction.php">
 		<table border="0">
 			<tr> 
-				<td>Name</td>
-				<td><input type="text" name="name" value="<?php echo $name; ?>"></td>
+				<td>Fakultas</td>
+				<td><input type="text" name="fakultas" value="<?php echo $fakultas; ?>"></td>
 			</tr>
 			<tr> 
-				<td>Age</td>
-				<td><input type="text" name="age" value="<?php echo $age; ?>"></td>
+				<td>Prodi</td>
+				<td><input type="text" name="prodi" value="<?php echo $prodi; ?>"></td>
 			</tr>
 			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email" value="<?php echo $email; ?>"></td>
+				<td>Program</td>
+				<td><input type="text" name="program" value="<?php echo $program; ?>"></td>
+			</tr>
+			<tr> 
+				<td>Akreditasi</td>
+				<td><input type="text" name="akreditasi" value="<?php echo $akreditasi; ?>"></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $id; ?>></td>
