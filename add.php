@@ -4,34 +4,34 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #3d3d3d;">
 	<div class="container d-flex flex-column justify-content-center">
-		<h2>Add Data</h2>
+		<h2 class='text-white'>Add Data</h2>
 		<p>
-			<a href="index.php">Home</a>
+			<a class="btn btn-primary" href="index.php">Home</a>
 		</p>
 	
 		<form action="addAction.php" method="post" name="add">
 			<table width="25%" border="0">
 				<tr> 
-					<td>Fakultas</td>
+					<td class='text-white'>Fakultas</td>
 					<td><input type="text" name="fakultas"></td>
 				</tr>
 				<tr> 
-					<td>Prodi</td>
+					<td class='text-white'>Prodi</td>
 					<td><input type="text" name="prodi"></td>
 				</tr>
 				<tr> 
-					<td>Program</td>
+					<td class='text-white'>Program</td>
 					<td><input type="text" name="program"></td>
 				</tr>
 				<tr> 
-					<td>Akreditasi</td>
+					<td class='text-white'>Akreditasi</td>
 					<td><input type="text" name="akreditasi"></td>
 				</tr>
 				<tr> 
 					<td></td>
-					<td><input type="submit" name="submit" value="Add"></td>
+					<td><input class="btn btn-light" type="submit" name="submit" value="Add"></td>
 				</tr>
 			</table>
 		</form>

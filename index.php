@@ -12,32 +12,32 @@ $result = mysqli_query($mysqli, "SELECT * FROM prodi ORDER BY id ASC");
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body class="">
+<body style="background-color: #3d3d3d;">
 	<div class="container d-flex flex-column justify-content-center">
-		<h2>Homepage</h2>
+		<h2 class="text-white">Homepage</h2>
 		<p>
-			<a href="add.php">Add New Data</a>
+			<a class="text-decoration-none btn btn-primary" href="add.php">Add New Data</a>
 		</p>
-		<table class="table">
-			<tr bgcolor='#DDDDDD'>
-				<td><strong>Id</strong></td>
+		<table class="table table-light">
+			<tr class="table-primary">
+				<td class="text-center"><strong>Id</strong></td>
 				<td><strong>Fakultas</strong></td>
 				<td><strong>Prodi</strong></td>
-				<td><strong>Program</strong></td>
-				<td><strong>Akreditasi</strong></td>
-				<td><strong>Aksi</strong></td>
+				<td class='text-center'><strong>Program</strong></td>
+				<td class='text-center'><strong>Akreditasi</strong></td>
+				<td class='text-center'><strong>Aksi</strong></td>
 			</tr>
 			<?php
 			// Fetch the next row of a result set as an associative array
 			while ($res = mysqli_fetch_assoc($result)) {
-				echo "<tr>";
-				echo "<td>".$res['id']."</td>";
+				echo "<tr class='table-info'>";
+				echo "<td class='text-center'>".$res['id']."</td>";
 				echo "<td>".$res['fakultas']."</td>";
 				echo "<td>".$res['prodi']."</td>";	
-				echo "<td>".$res['program']."</td>";	
-				echo "<td>".$res['akreditasi']."</td>";	
-				echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | 
-				<a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+				echo "<td class='text-center'>".$res['program']."</td>";	
+				echo "<td class='text-center'>".$res['akreditasi']."</td>";	
+				echo "<td class='text-center'><a class='text-decoration-none btn btn-secondary' href=\"edit.php?id=$res[id]\">Edit</a> | 
+				<a class='text-decoration-none btn btn-danger' href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 			}
 			?>
 			</tr>
