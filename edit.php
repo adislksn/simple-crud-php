@@ -28,7 +28,7 @@ $akreditasi = $resultData['akreditasi'];
 	    <a href="index.php">Home</a>
     </p>
 	
-	<form name="edit" method="post" action="editAction.php">
+	<form name="edit" method="post" action="editAction.php?id=<?php echo $id; ?>">
 		<table border="0">
 			<tr> 
 				<td>Fakultas</td>

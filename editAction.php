@@ -1,6 +1,7 @@
 <?php
 // Include the database connection file
 require_once("dbConnection.php");
+$id = $_GET['id'];
 
 if (isset($_POST['update'])) {
 	// Escape special characters in a string for use in an SQL statement
